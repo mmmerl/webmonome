@@ -5,19 +5,28 @@
   "author": "merl <merl@vvvvv.co>",
   "version": "0.0.1",
   "type": "module",
-  "main": "dist/webmonome.cjs.js",
+  "main": "dist/webmonome.cjs",
   "module": "dist/webmonome.esm.js",
   "browser": "dist/webmonome.umd.js",
   "unpkg": "dist/webmonome.umd.js",
   "types": "dist/webmonome.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/webmonome.d.ts",
-      "import": "./dist/webmonome.esm.js",
-      "require": "./dist/webmonome.cjs.js",
-      "default": "./dist/webmonome.esm.js"
+      "import": {
+        "types": "./dist/webmonome.d.ts",
+        "default": "./dist/webmonome.esm.js"
+      },
+      "require": {
+        "types": "./dist/webmonome.d.cts",
+        "default": "./dist/webmonome.cjs"
+      },
+      "default": {
+        "types": "./dist/webmonome.d.ts",
+        "default": "./dist/webmonome.esm.js"
+      }
     },
     "./min": {
+      "types": "./dist/webmonome.d.ts",
       "import": "./dist/webmonome.esm.min.js"
     },
     "./package.json": "./package.json"
@@ -33,6 +42,7 @@
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "keywords": [
     "WebUsb",
     "grid",

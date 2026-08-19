@@ -1,6 +1,6 @@
 import { GridMext } from './interfaces/GridMext.js';
 import { GridSeries } from './interfaces/GridSeries.js';
-import { CanvasGrid } from './interfaces/CanvasGrid.js';
+import { CanvasGrid as CanvasGridImpl } from './interfaces/CanvasGrid.js';
 import {
 	deviceType,
 	DEVICE_TYPE_MEXT,
@@ -197,7 +197,7 @@ class Monome extends EventTarget {
 	 * @returns {import('./interfaces/CanvasGrid.js').CanvasGrid}
 	 */
 	createCanvasGrid(config = {}) {
-		const v = new CanvasGrid(this, {
+		const v = new CanvasGridImpl(this, {
 			...config,
 			onDispose: (c) => this.#canvases.delete(c),
 		});
