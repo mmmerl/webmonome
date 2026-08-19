@@ -138,6 +138,8 @@ class Monome extends EventTarget {
 			return;
 		}
 
+		if (this.#bridge) await this.disconnect();
+
 		/** @type {USBDevice | null} */
 		let device = null;
 		try {

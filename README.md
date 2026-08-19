@@ -88,7 +88,7 @@ launchctl load /Library/LaunchAgents/org.monome.serialosc.plist
 
 ### connect
 
-- initialize WebUSB and connect to device:
+- initialize WebUSB and connect to device (calling this while already connected disconnects first, can be used for device switching):
 
   ```javascript
   monome.connect()
